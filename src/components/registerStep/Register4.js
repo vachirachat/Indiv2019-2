@@ -1,0 +1,24 @@
+import React,{Component} from 'react';
+
+export class Register4 extends Component{
+
+    continue = e =>{
+        e.preventDefault();
+        this.props.nextStep();
+    };
+
+    back = e =>{
+        e.preventDefault();
+        this.props.prevStep();
+    };
+    render(){
+    return (
+        <div><h1>Register 4</h1>
+        <h1>การลงทะเบียนสำเร็จเสร็จสิ้น</h1>
+        
+        <a class="btn btn-outline-green" href='/'>เสร็จสิ้น</a>
+        </div>
+    )
+}
+}
+export default Register4;
