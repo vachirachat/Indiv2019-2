@@ -12,10 +12,10 @@ export class Register3 extends Component {
     };
     render() {
         return (
-            <div>
+            <div >
                 <h1>Register 3</h1>
-                <div style={{ width: '40%', marginLeft: '30%' }}>
-                    <div class="accordion" id="accordionExample">
+                <div id='register3Form' class='col-lg-5 col-sm-12'>
+                    <div class="accordion" id='accordionExample'>
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
@@ -27,14 +27,14 @@ export class Register3 extends Component {
 
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                   <form class="form-1">
-                                   <div class="form-group" style={{marginLeft:'10%'}}>
-                                        <label for="exampleInputEmail1">กรอกรหัสโค้ดจากบัตรที่ซื้อมา</label>
-                                        <input class="form-control col-lg-8" id="codeRegister" style={{marginBottom:'5px'}}aria-describedby="emailHelp" placeholder="กรอกรหัส" />
-                                        <button class='btn btn-outline-green col-lg-8'>ลงทะเบียน</button>
-                                        <small id="emailHelp" class="form-text text-muted">รหัส 14 หลักที่อยู่หลังบัตร</small>
-                                    </div>
-                                   </form>
+                                    <form class="form-1">
+                                        <div class="form-group" style={{ marginLeft: '10%' }}>
+                                            <label for="exampleInputEmail1">กรอกรหัสโค้ดจากบัตรที่ซื้อมา</label>
+                                            <input class="form-control col-lg-8" id="codeRegister" style={{ marginBottom: '5px' }} aria-describedby="emailHelp" placeholder="กรอกรหัส" />
+                                            <button class='btn btn-outline-green col-lg-8'>ลงทะเบียน</button>
+                                            <small id="emailHelp" class="form-text text-muted">รหัส 14 หลักที่อยู่หลังบัตร</small>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -52,12 +52,12 @@ export class Register3 extends Component {
       </div>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
-                
-                <button type="submit" class="btn btn-outline-green" onClick={this.back}>ย้อนกลับ</button>
-                <button type="submit" class="btn btn-outline-green" onClick={this.continue}>ต่อไป</button>
+
+                    <button type="submit" id='nextButton' class="btn btn-outline-green" onClick={this.back}>ย้อนกลับ</button>
+                    <button type="submit" class="btn btn-outline-green" onClick={this.continue}>ต่อไป</button>
                 </div>
             </div>
         )

@@ -24,7 +24,10 @@ body,html{
     background-color: #00b78b;
     border-color: #ffffff;
 }
-
+#nextButton{
+    margin-left:73%;
+    margin-right:5px;
+}
 form{
     width:40%;
     margin-top: 5%;
@@ -34,6 +37,9 @@ form{
 width:100%;
    margin-left:10%; 
 }
+#register3Form{
+    margin-left: 30%;
+}
 .loginForm{
     width:100%;
     
@@ -42,4 +48,19 @@ width:100%;
     border-color: #00b78b;
     lighting-color: #00b78b;
     box-shadow: 0 1px 1px rgba(0, 183, 139, 0.2) inset, 0 0 8px rgba(0, 183, 139, 0.6);;
+}
+@media only screen and (max-width: 600px){
+    form{
+        margin-left:0%;
+    }
+    #nextButton{
+        margin-left:55%;
+    }
+    #register3Form{
+        margin-left: 0%;
+}
+.form-1{
+    margin-left: -15px;
+}
+    
 }
