@@ -5,17 +5,24 @@ import '../src/style/style.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
-import FirstCompPage from './components/FirstCompPage';
+import FirstPage from './components/FirstPage';
 import Register from './components/Register';
+import SecondCompPage from './components/SecondCompPage';
+import ChartEx from './components/ChartEx';
+import Footer from './components/Footer';
+import FirstCompPage from './components/FirstCompPage';
+import {Element} from 'react-scroll';
+
 const rounting = (
     <Router>
         <Navbar />
-        <div>
-            <Route exact path='/' component={FirstCompPage} />
+            <Route path="/" exact component={FirstPage} />
+        
+            
             <Route path='/register' component={Register} />
             <Route path='/login' component={LoginForm} />
             
-        </div>
+    
     </Router>
 )
 ReactDOM.render(rounting, document.getElementById('root'));

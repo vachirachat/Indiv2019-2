@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 export class Register3 extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            data : this.data,
+        };
+        this.data2 = {
+            IDNum:'1100400984102',
+            name:'vachirachat',
+            email:'vachira21chat@outllklook.com',
+            phone:'0819906782',
+            school:'suankularb135',
+            year:'1'
+
+        }
+    }
     continue = e => {
         e.preventDefault();
+        this.props.handleSubmit();
         this.props.nextStep();
     };
 
@@ -10,11 +26,16 @@ export class Register3 extends Component {
         e.preventDefault();
         this.props.prevStep();
     };
+    handleSubmit = e =>{
+        e.preventDefault();
+        this.props.handleSubmit();
+        this.props.nextStep();
+    };
     render() {
         return (
-            <div >
-                <h1>Register 3</h1>
+            <div>
                 <div id='register3Form' class='col-lg-5 col-sm-12'>
+                <h1>ขั้นตอนสมัคร STEP 3</h1>
                     <div class="accordion" id='accordionExample'>
                         <div class="card">
                             <div class="card-header" id="headingOne">
@@ -55,9 +76,24 @@ export class Register3 extends Component {
 
 
                     </div>
-
-                    <button type="submit" id='nextButton' class="btn btn-outline-green" onClick={this.back}>ย้อนกลับ</button>
-                    <button type="submit" class="btn btn-outline-green" onClick={this.continue}>ต่อไป</button>
+                    <div style={{marginTop:'1%'}}>
+                        <button type="submit" id='nextButton' class="btn btn-outline-green" onClick={this.back}>ย้อนกลับ</button>
+                        <button type="submit" class="btn btn-outline-green" 
+                         onClick ={(e)=> {
+                            console.log('this is in Show');
+                            console.log(this.data2);
+                            axios.post('http://localhost:5000/api/users/register',
+                            this.data2
+                            ).then((res) => {
+                                console.log(res.status);
+                            }).catch((error) =>{
+                                const {response} = error;
+                                console.log(JSON.stringify(error));
+                                alert(JSON.stringify(error['message']));
+                            })
+                            this.handleSubmit.bind(this);
+                        }}>ต่อไป</button>
+                    </div>
                 </div>
             </div>
         )
